@@ -4,6 +4,8 @@ letter_array = word.split("")         #splits the random word's letter into an a
 
 dash_array = [ " _ ", " _ ", " _ "]
 
+letters_guessed = []
+
 #The animation goes here....
 puts "\n
  (@)(@)(@)(@)(@)
@@ -19,3 +21,8 @@ puts "\nPlease choose a letter and press enter!"
   user_letter = gets.chomp.upcase
 
 puts "You selected #{user_letter}."
+
+letters_guessed << user_letter    #Adds the letter user guessed to the array
+                                  #of letters user has already guessed.
+puts "Letters Guessed:"
+puts letters_guessed.join
