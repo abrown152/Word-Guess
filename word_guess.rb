@@ -20,39 +20,132 @@ puts "\n
 #this prints out the dash array
 puts dash_array.join
 
-puts "\nPlease choose a letter and press enter!"
-  user_letter = gets.chomp.upcase
 
-puts "You selected #{user_letter}."
-
-
-puts "Letters Guessed:"
-puts letters_guessed.join    # need to do something with letters_guessed first yo... #of letters user has already guessed.
-
-#def include_in_guessed
-  if letters_guessed.include?(user_letter) == true
-    puts "You already guessed that letter! Try again."
-  else
- letters_guessed << user_letter    #Adds the letter user guessed to the array
- #    include_in_word
-#  end
-#end
-
-#def include_in_word
-    if letter_array.include?(user_letter) == false
-      puts "#{user_letter} is not included in the word!"
-    else
+def include_in_word
+    if letter_array.include?(user_letter) == true
       puts "You guessed correctly!"
-    #Enter code that changes the dash to the letter the user guessed right heeere
+      #Enter code that changes the dash to the letter the user guessed right heeere
+        if word == PET
+          word_pet
+        elsif word == HUT
+          word_hut
+        elsif word == CAT
+          word_cat
+        elsif word == DOG
+          word_dog
+        end
+
+    else
+      puts "#{user_letter} is not included in the word!"
+      #remove on of the roses
+      puts "\nLetters Guessed:\n"
+      puts letters_guessed.join    # need to do something with letters_guessed first yo... #of letters user has already guessed.
+      puts "\nPlease choose a letter and press enter!"
+      user_letter = gets.chomp.upcase
+      puts "You selected #{user_letter}."
+      include_in_guessed
     end
   end
 
-# Parentheses are optional in function and method definitions with no arguments
-def hiImFunction
-  puts ':)'
+ def word_pet
+  if user_letter == "E"
+    #replace index 1 in letter_array with "E"
+  elsif user_letter == "P"
+    #replace index 0 in letter_array with "P"
+  elsif user_letter == "T"
+    #replace index 2 in letter_array with "T"
+  end
+  puts "\nLetters Guessed:\n"
+  puts letters_guessed.join    # need to do something with letters_guessed first yo... #of letters user has already guessed.
+  puts "\nPlease choose a letter and press enter!"
+  user_letter = gets.chomp.upcase
+  puts "You selected #{user_letter}."
+  include_in_guessed
 end
 
-# Parentheses are optional when calling functions and methods without arguments
-hiImFunction
+def word_hut
+  if user_letter == "U"
+   #replace index 1 in letter_array with "U"
+  elsif user_letter == "H"
+    #replace index 0 in letter_array with "H"
+  elsif user_letter == "T"
+    #replace index 2 in letter_array with "T"
+  end
+  puts "\nLetters Guessed:\n"
+  puts letters_guessed.join    # need to do something with letters_guessed first yo... #of letters user has already guessed.
+  puts "\nPlease choose a letter and press enter!"
+  user_letter = gets.chomp.upcase
+  puts "You selected #{user_letter}."
+  include_in_guessed
+end
 
-#look up recursion ^_^
+def word_dog
+  if user_letter == "O"
+   #replace index 1 in letter_array with "O"
+  elsif user_letter == "D"
+    #replace index 0 in letter_array with "D"
+  elsif user_letter == "G"
+    #replace index 2 in letter_array with "G"
+  end
+  puts "\nLetters Guessed:\n"
+  puts letters_guessed.join    # need to do something with letters_guessed first yo... #of letters user has already guessed.
+  puts "\nPlease choose a letter and press enter!"
+  user_letter = gets.chomp.upcase
+  puts "You selected #{user_letter}."
+  include_in_guessed
+end
+
+def word_cat
+  if user_letter == "A"
+   #replace index 1 in letter_array with "A"
+  elsif user_letter == "C"
+    #replace index 0 in letter_array with "C"
+  elsif user_letter == "T"
+    #replace index 2 in letter_array with "T"
+  end
+  puts "\nLetters Guessed:\n"
+  puts letters_guessed.join    # need to do something with letters_guessed first yo... #of letters user has already guessed.
+  puts "\nPlease choose a letter and press enter!"
+  user_letter = gets.chomp.upcase
+  puts "You selected #{user_letter}."
+  include_in_guessed
+end
+
+def include_in_guessed
+  while letters_guessed.include?(user_letter) == true
+    puts "You already guessed that letter!"
+    puts "\nLetters Guessed:\n"
+    puts letters_guessed.join    # need to do something with letters_guessed first yo... #of letters user has already guessed.
+    puts "\nPlease choose a letter and press enter!"
+    user_letter = gets.chomp.upcase
+    puts "You selected #{user_letter}."
+  end
+  puts letters_guessed
+  letters_guessed << user_letter    #Adds the letter user guessed to the array
+    include_in_word
+end
+
+puts "\nLetters Guessed:\n"
+puts letters_guessed.join    # need to do something with letters_guessed first yo... #of letters user has already guessed.
+puts "\nPlease choose a letter and press enter!"
+user_letter = gets.chomp.upcase
+puts "You selected #{user_letter}."
+include_in_guessed
+
+ter
+
+#can use a while loop or until loop ************* no method needed probably
+#look up next and break(exit manually) -flow control inside of loops, skipping iterations and exiting the loop when we need to
+#loop until finished == true????
+
+
+
+
+
+# Parentheses are optional in function and method definitions with no arguments
+#def hiImFunction
+#  puts ':)'
+#end
+
+# Parentheses are optional when calling functions and methods without arguments
+#hiImFunction
