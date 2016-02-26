@@ -26,3 +26,20 @@ letters_guessed << user_letter    #Adds the letter user guessed to the array
                                   #of letters user has already guessed.
 puts "Letters Guessed:"
 puts letters_guessed.join
+
+def include_in_guessed
+  if letters_guessed.include?(user_letter) == true
+    puts "You already guessed that letter! Try again."
+  else
+    include_in_word
+  end
+end
+
+def include_in_word
+  if letter_array.include?(user_letter) == false
+    puts "#{user_letter} is not included in the word!"
+  else
+    puts "You guessed correctly!"
+    #Enter code that changes the dash to the letter the user guessed right heeere
+  end
+end
