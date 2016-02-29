@@ -5,6 +5,7 @@ class WordGuess
     @letter_array = @word.split("")         #splits the random word's letter into an array
     @dash_array = [ " _ ", " _ ", " _ "]
     @letters_guessed = []
+    @rose_array = ["(@)", "(@)", "(@)", "(@)", "(@)"]
     #@user_letter = user_letter
 
     puts @word       # Remove this test before final push.
@@ -12,7 +13,7 @@ class WordGuess
 
                     # \ here is start of an escape sequence with n being a new line, so \ \ is an actual backslash!!!
     puts "\n
-    (@)(@)(@)(@)(@)
+    #{@rose_array.join}
       \\ \\ | / /
         _\\|/_
        |_____|
@@ -44,78 +45,109 @@ def include_in_word
 
     else
       puts "#{@user_letter} is not included in the word!"
-      #remove on of the roses
-      puts "\nLetters Guessed:\n"
-      puts @letters_guessed.join    # need to do something with @letters_guessed first yo... #of letters user has already guessed.
-      puts "\nPlease choose a letter and press enter!"
-      @user_letter = gets.chomp.upcase
-      puts "You selected #{@user_letter}."
-      include_in_guessed
+      @rose_array.delete_at(0)
+      puts "\n
+      #{@rose_array.join}
+        \\ \\ | / /
+          _\\|/_
+         |_____|
+          |   |
+          |___| "
+      if @rose_array.length == 0
+        loser_method
+      else
+        puts "\nLetters Guessed:\n"
+        puts @letters_guessed.join    # need to do something with @letters_guessed first yo... #of letters user has already guessed.
+        puts "\nPlease choose a letter and press enter!"
+        @user_letter = gets.chomp.upcase
+        puts "You selected #{@user_letter}."
+        include_in_guessed
+      end
     end
   end
 
  def word_pet
   if @user_letter == "E"
-    #replace index 1 in @letter_array with "E"
+    @dash_array.fill("E", 1..1)
   elsif @user_letter == "P"
-    #replace index 0 in @letter_array with "P"
+    @dash_array.fill("P", 0..0)
   elsif @user_letter == "T"
-    #replace index 2 in @letter_array with "T"
+    @dash_array.fill("T", 2..2)
   end
   puts "\nLetters Guessed:\n"
   puts @letters_guessed.join    # need to do something with @letters_guessed first yo... #of letters user has already guessed.
-  puts "\nPlease choose a letter and press enter!"
-  @user_letter = gets.chomp.upcase
-  puts "You selected #{@user_letter}."
-  include_in_guessed
+  puts @dash_array.join
+  #unless @dash_array.include?("_")
+  #  winner_method
+  #else
+    puts "\nPlease choose a letter and press enter!"
+    @user_letter = gets.chomp.upcase
+    puts "You selected #{@user_letter}."
+    include_in_guessed
+  #end
 end
 
 def word_hut
   if @user_letter == "U"
-   #replace index 1 in @letter_array with "U"
- elsif @user_letter == "H"
-    #replace index 0 in @letter_array with "H"
+    @dash_array.fill("U", 1..1)
+  elsif @user_letter == "H"
+    @dash_array.fill("H", 0..0)
   elsif @user_letter == "T"
-    #replace index 2 in @letter_array with "T"
+    @dash_array.fill("T", 2..2)
   end
   puts "\nLetters Guessed:\n"
   puts @letters_guessed.join    # need to do something with @letters_guessed first yo... #of letters user has already guessed.
-  puts "\nPlease choose a letter and press enter!"
-  @user_letter = gets.chomp.upcase
-  puts "You selected #{@user_letter}."
-  include_in_guessed
+  puts @dash_array.join
+  #unless @dash_array.include?("_")
+  #  winner_method
+  #else
+    puts "\nPlease choose a letter and press enter!"
+    @user_letter = gets.chomp.upcase
+    puts "You selected #{@user_letter}."
+    include_in_guessed
+  #end
 end
 
 def word_dog
   if @user_letter == "O"
-   #replace index 1 in @letter_array with "O"
+   @dash_array.fill("O", 1..1)
  elsif @user_letter == "D"
-    #replace index 0 in @letter_array with "D"
+   @dash_array.fill("D", 0..0)
   elsif @user_letter == "G"
-    #replace index 2 in @letter_array with "G"
+    @dash_array.fill("G", 2..2)
   end
   puts "\nLetters Guessed:\n"
   puts @letters_guessed.join    # need to do something with @letters_guessed first yo... #of letters user has already guessed.
-  puts "\nPlease choose a letter and press enter!"
-  @user_letter = gets.chomp.upcase
-  puts "You selected #{@user_letter}."
-  include_in_guessed
+  puts @dash_array.join
+  #unless @dash_array.include?("_")
+  #  winner_method
+  #else
+    puts "\nPlease choose a letter and press enter!"
+    @user_letter = gets.chomp.upcase
+    puts "You selected #{@user_letter}."
+    include_in_guessed
+  #end
 end
 
 def word_cat
   if @user_letter == "A"
-   #replace index 1 in @letter_array with "A"
+   @dash_array.fill("A", 1..1)
  elsif @user_letter == "C"
-    #replace index 0 in @letter_array with "C"
+   @dash_array.fill("C", 0..0)
   elsif @user_letter == "T"
-    #replace index 2 in @letter_array with "T"
-  end
+    @dash_array.fill("T", 2..2)
+end
   puts "\nLetters Guessed:\n"
   puts @letters_guessed.join    # need to do something with @letters_guessed first yo... #of letters user has already guessed.
-  puts "\nPlease choose a letter and press enter!"
-  @user_letter = gets.chomp.upcase
-  puts "You selected #{@user_letter}."
-  include_in_guessed
+  puts @dash_array.join
+  #unless @dash_array.include?("_")
+  #  winner_method
+  #else
+    puts "\nPlease choose a letter and press enter!"
+    @user_letter = gets.chomp.upcase
+    puts "You selected #{@user_letter}."
+    include_in_guessed
+  #end
 end
 
 def include_in_guessed
@@ -130,6 +162,14 @@ def include_in_guessed
   puts @letters_guessed
   @letters_guessed << @user_letter    #Adds the letter user guessed to the array
     include_in_word
+end
+
+#def winner_method
+#  puts "YOU WIN!!!^_^"
+#end
+
+def loser_method
+  puts "YOU LOSE!!! -_-"
 end
 
 
