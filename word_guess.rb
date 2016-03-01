@@ -77,14 +77,14 @@ def include_in_word
   puts "\nLetters Guessed:\n"
   puts @letters_guessed.join    # need to do something with @letters_guessed first yo... #of letters user has already guessed.
   puts @dash_array.join
-  #unless @dash_array.include?("_")
-  #  winner_method
-  #else
+  if @dash_array.include?(" _ ")
     puts "\nPlease choose a letter and press enter!"
     @user_letter = gets.chomp.upcase
     puts "You selected #{@user_letter}."
     include_in_guessed
-  #end
+  else
+   winner_method
+  end
 end
 
 def word_hut
@@ -98,14 +98,14 @@ def word_hut
   puts "\nLetters Guessed:\n"
   puts @letters_guessed.join    # need to do something with @letters_guessed first yo... #of letters user has already guessed.
   puts @dash_array.join
-  #unless @dash_array.include?("_")
-  #  winner_method
-  #else
+  if @dash_array.include?(" _ ")
     puts "\nPlease choose a letter and press enter!"
     @user_letter = gets.chomp.upcase
     puts "You selected #{@user_letter}."
     include_in_guessed
-  #end
+  else
+   winner_method
+  end
 end
 
 def word_dog
@@ -119,14 +119,14 @@ def word_dog
   puts "\nLetters Guessed:\n"
   puts @letters_guessed.join    # need to do something with @letters_guessed first yo... #of letters user has already guessed.
   puts @dash_array.join
-  #unless @dash_array.include?("_")
-  #  winner_method
-  #else
+  if @dash_array.include?(" _ ")
     puts "\nPlease choose a letter and press enter!"
     @user_letter = gets.chomp.upcase
     puts "You selected #{@user_letter}."
     include_in_guessed
-  #end
+  else
+   winner_method
+  end
 end
 
 def word_cat
@@ -140,14 +140,14 @@ end
   puts "\nLetters Guessed:\n"
   puts @letters_guessed.join    # need to do something with @letters_guessed first yo... #of letters user has already guessed.
   puts @dash_array.join
-  #unless @dash_array.include?("_")
-  #  winner_method
-  #else
+  if @dash_array.include?(" _ ")
     puts "\nPlease choose a letter and press enter!"
     @user_letter = gets.chomp.upcase
     puts "You selected #{@user_letter}."
     include_in_guessed
-  #end
+  else
+   winner_method
+  end
 end
 
 def include_in_guessed
@@ -164,9 +164,9 @@ def include_in_guessed
     include_in_word
 end
 
-#def winner_method
-#  puts "YOU WIN!!!^_^"
-#end
+def winner_method
+  puts "YOU WIN!!!^_^"
+end
 
 def loser_method
   puts "YOU LOSE!!! -_-"
